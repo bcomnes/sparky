@@ -1,0 +1,44 @@
+{
+  "name": "sparky",
+  "version": "0.2.1",
+  "description": "Sparky is a JavaScript library for drawing Sparklines dynamically in your web browser. ",
+  "directories": {
+    "example": "examples"
+  },
+  "main": "browserify.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shawnbot/sparky.git"
+  },
+  "author": "Shawn Allen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shawnbot/sparky/issues"
+  },
+  "homepage": "https://github.com/shawnbot/sparky",
+  "browserify": {
+    "transform": [
+      "browserify-shim"
+    ]
+  },
+  "browser": {
+    "raphael": "./lib/raphael/raphael-min.js",
+    "sparky": "./src/sparky.js"
+  },
+  "browserify-shim": {
+    "raphael": "Raphael",
+    "sparky": {
+      "exports": "sparky",
+      "depends": [
+        "raphael:Raphael"
+      ]
+    }
+  },
+  "dependencies": {
+    "browserify": "^7.0.0",
+    "browserify-shim": "^3.8.1"
+  }
+}
